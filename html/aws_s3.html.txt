@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Recognition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Image Recognition</h2>
+        <form action="awsimg.py" method="post" enctype="multipart/form-data">
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" id="image" accept="image/*" required>
+            <br><br>
+            <button type="submit">Recognize</button>
+        </form>
+        <h2>Recognition Results:</h2>
+        <ul>
+            <!-- Display recognition results here using JavaScript -->
+        </ul>
+    </div>
+</body>
+</html>
+
+[root@ip-172-31-3-169 html]# ls
+'\'         awsimg.html   docker.html   ec2.py     index.html    mail.html   openai.html   san.html     test.html
+ aws.html   awss3.html    ec2.html      geo.html   lookup.html   menu.html   polly.html    task1.html   trans.html
+[root@ip-172-31-3-169 html]# cat awss3.html 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        label {
+            font-size: 18px;
+        }
+        input[type="file"] {
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #352d2d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Documents</h1>
+    <form action="http://18.191.139.184/cgi-bin/s3.py" method="post" enctype="multipart/form-data">
+        <label for="document">Select Document:</label>
+        <br>
+        <input type="file" name="document" id="document" accept=".pdf, .doc, .docx">
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
